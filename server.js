@@ -16,12 +16,23 @@ app.set("views", "views");
 app.set("view engine", "ejs"); // ejs orqali frontendni yasimiz backendni ichida
 
 // 4 Routing code
-app.get("/hello", function (req, res) {
-  // res.end(`<h1> Hello World </h1>`);
-  res.end(`<h1 style="background: red"> Hello World by AUSTIN</h1>`); // localhost:3000/hello
+
+// app.get("/hello", function (req, res) {
+//   // res.end(`<h1> Hello World </h1>`);
+//   res.end(`<h1 style="background: red"> Hello World by AUSTIN</h1>`); // localhost:3000/hello
+// });
+// app.get("/gift", function (req, res) {
+//   res.end(`<h1> Siz sovg'alar bo'limidasiz </h1>`); // localhost:3000/gift
+// });
+app.post("/create-item", (req, res) => {
+  // malumotni uzi bilan olib keladi
+  console.log(req);
+  res.json({ test: "success" });
 });
-app.get("/gift", function (req, res) {
-  res.end(`<h1> Siz sovg'alar bo'limidasiz </h1>`); // localhost:3000/gift
+
+app.get("/", function (req, res) {
+  // data base dan malumotni olish uchun get ishlatilinadi
+  res.render("harid");
 });
 
 const server = http.createServer(app);
