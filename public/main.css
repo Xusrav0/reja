@@ -32,7 +32,7 @@ span {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #e7caca;
+  background-color: #e5e5e5;
 }
 
 .frame .main_frame {
@@ -385,7 +385,6 @@ strong {
 
 .midd_frame_top .icony {
   position: absolute;
-  cursor: none;
 }
 
 .midd_frame_top .orange_ell {
