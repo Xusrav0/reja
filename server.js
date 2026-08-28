@@ -14,6 +14,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 });
 
 // 1 kirish code
+// app.use(express.static("public")); Middleware Design Pattern
 app.use(express.static("public")); // browserdan kelgan zaproslar uchun (clientlarga ochib berish uchun)
 app.use(express.json()); // kirib kelayotgan json ko'rinishidagi datani bizga objectga o'girib beradi
 app.use(express(express.urlencoded({ extended: true }))); // html dan traditional form request dan post qilingan narsalarni qabul qilishga ishlatilinadi
