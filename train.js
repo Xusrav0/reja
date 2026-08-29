@@ -1,3 +1,24 @@
+// TASK-A
+/*
+Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni 
+ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
+MASALAN countLetter("e", "engineer") 3ni return qiladi.
+*/
+
+function countLetter(harf, soz) {
+  let nechta = 0;
+  for (let letter of soz) {
+    if (letter === harf) {
+      nechta++;
+    }
+  }
+  return nechta;
+}
+
+console.log(countLetter("e", "engineer"));
+// console.log(countLetter("n", "engineer"));
+
+/*
 console.log("Jack Ma maslahatlari");
 const list = [
   "yaxshi talaba boling", // 0-20
@@ -27,7 +48,7 @@ function maslahatBering(a, callback) {
     // }, 5000);
   }
 }
-
+*/
 // maslahatBering(21, (err, data) => {
 //   if (err) console.log("Error:", err);
 //   console.log(data);
@@ -45,14 +66,14 @@ function maslahatBering(a, callback) {
 //   }
 // });
 
-console.log("Passed here 0");
-maslahatBering(65, (err, data) => {
-  if (err) console.log("Error:", err);
-  else {
-    console.log("Javob:", data);
-  }
-});
-console.log("Passed here 1");
+// console.log("Passed here 0");
+// maslahatBering(65, (err, data) => {
+//   if (err) console.log("Error:", err);
+//   else {
+//     console.log("Javob:", data);
+//   }
+// });
+// console.log("Passed here 1");
 
 // ASYNC function
 /*
