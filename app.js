@@ -19,7 +19,7 @@ const db = require("./server").db("Reja");
 // app.use(express.static("public")); Middleware Design Pattern
 app.use(express.static("public")); // browserdan kelgan zaproslar uchun (clientlarga ochib berish uchun)
 app.use(express.json()); // kirib kelayotgan json ko'rinishidagi datani bizga objectga o'girib beradi
-app.use(express(express.urlencoded({ extended: true }))); // html dan traditional form request dan post qilingan narsalarni qabul qilishga ishlatilinadi
+app.use(express.urlencoded({ extended: true })); // html dan traditional form request dan post qilingan narsalarni qabul qilishga ishlatilinadi
 
 // 2 Session code
 
@@ -39,8 +39,18 @@ app.set("view engine", "ejs"); // ejs orqali frontendni yasimiz backendni ichida
 // });
 app.post("/create-item", (req, res) => {
   // malumotni uzi bilan olib keladi
-  console.log(req);
-  res.json({ test: "success" });
+  console.log("user entered /create-item");
+  console.log(req.body);
+  const new_reja = req.body.reja;
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.end("Something went wrong!");
+    } else {
+      res.end("successfully added!");
+    }
+  });
+  // res.end("success");
 });
 
 app.get("/author", (req, res) => {
@@ -49,7 +59,18 @@ app.get("/author", (req, res) => {
 
 app.get("/", function (req, res) {
   // data base dan malumotni olish uchun get ishlatilinadi
-  res.render("reja");
+  console.log("user entered /");
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        console.log(err);
+        res.end("Something went wrong");
+      } else {
+        console.log(data);
+        res.render("reja", { items: data });
+      }
+    });
 });
 
 module.exports = app;
