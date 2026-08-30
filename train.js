@@ -4,7 +4,7 @@ Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni
 ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
 MASALAN countLetter("e", "engineer") 3ni return qiladi.
 */
-
+/*
 function countLetter(harf, soz) {
   let nechta = 0;
   for (let letter of soz) {
@@ -17,7 +17,7 @@ function countLetter(harf, soz) {
 
 console.log(countLetter("e", "engineer"));
 // console.log(countLetter("n", "engineer"));
-
+*/
 /*
 console.log("Jack Ma maslahatlari");
 const list = [
@@ -172,3 +172,42 @@ async function run() {
 
 run();
 */
+
+const advice = [
+  "Focus on learning the basics", // 18–20
+  "Build your skills and do internships", // 21–23
+  "Start building your career", // 24–26
+  "Look for better opportunities", // 27–30
+  "Consider becoming a mentor", // 31+
+];
+
+function universityAdvice(age) {
+  return new Promise((resolve, reject) => {
+    if (typeof age !== "number") reject("Please insert a number");
+    else if (age < 18) reject("You are under age");
+    else if (age >= 18 && age <= 20) resolve(advice[0]);
+    else if (age >= 21 && age <= 23) resolve(advice[1]);
+    else if (age >= 24 && age <= 26) resolve(advice[2]);
+    else if (age >= 27 && age <= 30) resolve(advice[3]);
+    else if (age >= 31) resolve(advice[4]);
+  });
+}
+
+// universityAdvice(25)
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+async function run() {
+  let answer = await universityAdvice(19);
+  console.log(answer);
+  answer = await universityAdvice(25);
+  console.log(answer);
+  answer = await universityAdvice(35);
+  console.log(answer);
+}
+
+run();
