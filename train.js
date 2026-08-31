@@ -1,23 +1,39 @@
+// TASK-B
+// Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+// MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+
+function countDigits(number) {
+  let count = 0;
+  for (let i of number) {
+    if (i >= "0" && i <= "9") {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(countDigits("ad2a54y79wet0sfgb9"));
+// console.log(countDigits("ad2a54y79wet0sfgb916542"));
 // TASK-A
 /*
 Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni 
 ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
 MASALAN countLetter("e", "engineer") 3ni return qiladi.
 */
-/*
-function countLetter(harf, soz) {
-  let nechta = 0;
-  for (let letter of soz) {
-    if (letter === harf) {
-      nechta++;
-    }
-  }
-  return nechta;
-}
 
-console.log(countLetter("e", "engineer"));
+// function countLetter(harf, soz) {
+//   let nechta = 0;
+//   for (let letter of soz) {
+//     if (letter === harf) {
+//       nechta++;
+//     }
+//   }
+//   return nechta;
+// }
+
+// console.log(countLetter("e", "engineer"));
 // console.log(countLetter("n", "engineer"));
-*/
+
 /*
 console.log("Jack Ma maslahatlari");
 const list = [
@@ -172,7 +188,7 @@ async function run() {
 
 run();
 */
-
+/*
 const advice = [
   "Focus on learning the basics", // 18–20
   "Build your skills and do internships", // 21–23
@@ -211,3 +227,4 @@ async function run() {
 }
 
 run();
+*/
