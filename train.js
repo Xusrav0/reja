@@ -26,19 +26,27 @@ class Shop {
       console.log("mahsulot topilmadi");
       return;
     }
-
-    // const time = moment().format("HH:mm");
-    // console.log(`${time}da ${soni}ta ${mahsulot} qabul qilindi`);
-    // this.qoldiq();
   }
 
   sotish(mahsulot, soni) {
     if (mahsulot === "non") {
-      this.non -= soni;
+      if (this.non >= mahsulot) {
+        this.non -= soni;
+      } else {
+        console.log(`Nonni soni yetarli emas`);
+      }
     } else if (mahsulot === "lagmon") {
-      this.lagmon -= soni;
+      if (this.lagmon >= mahsulot) {
+        this.lagmon -= soni;
+      } else {
+        console.log(`Lagmon soni yetarli emas`);
+      }
     } else if (mahsulot === "cola") {
-      this.cola -= soni;
+      if (this.cola >= mahsulot) {
+        this.cola -= soni;
+      } else {
+        console.log(`Colani soni yetarli emas`);
+      }
     } else {
       console.log("mahsulot topilmadi");
       return;
@@ -58,6 +66,10 @@ shop.qoldiq();
 shop.qabul("non", 3);
 shop.qabul("cola", 4);
 shop.qoldiq();
+
+// shop.qabul("non", 6);
+// shop.sotish("cola", 8);
+// shop.qoldiq();
 
 // TASK-B
 // Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
