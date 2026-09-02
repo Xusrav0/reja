@@ -13,14 +13,14 @@
     />
   </head>
 
-  <body style="background-color: #b8bbd1">
+  <body style="background-color:#F8FAFC">
     <div class="container">
-      <h1 class="display-4 text-center py-1">REJA VA MAQSADLAR</h1>
+      <h1 class="display-4 text-center py-1" style="font-weight: 500;">REJA VA MAQSADLAR</h1>
 
-      <div class="jumbotron p-3 shadow-sm">
+      <div class="jumbotron p-3 shadow-sm"> 
         <form id="create-form" action="/create-item" method="POST">
           <div class="d-flex align-items-center">
-            <input
+            <input 
               id="create-field"
               name="reja"
               autofocus
@@ -28,6 +28,7 @@
               class="form-control mr-3"
               type="text"
               style="flex: 1"
+              placeholder="What are we up to?"
             />
 
             <button class="btn btn-primary" style="border-radius: 20px">
@@ -41,8 +42,8 @@
 
       <ul id="item-list" class="list-group pb-5">
         <% items.map(function(item) { %>
-        <li
-          class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
+        <li 
+          class="list-group-item list-group-item-secondary d-flex align-items-center justify-content-between"
         >
           <span class="item-text"><%=item.reja%></span>
 
@@ -62,5 +63,7 @@
         Hamma Rejalarni o'chirish
       </button>
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/browser.js"></script>
   </body>
 </html>
